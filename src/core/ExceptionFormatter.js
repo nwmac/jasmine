@@ -8,7 +8,7 @@ getJasmineRequireObj().ExceptionFormatter = function(j$) {
       if (error.name && error.message) {
         message += error.name + ': ' + error.message;
       } else {
-        message += error.toString() + ' thrown';
+        message += JSON.stringify(error, undefined, 4) + ' thrown';
       }
 
       if (error.fileName || error.sourceURL) {
